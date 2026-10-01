@@ -14,15 +14,28 @@
                     <label for="organization-name">Nazwa organizacji</label>
                     <input id="organization-name" class="flience-input" name="organizationName" type="text" placeholder="np. Szkoła Podstawowa nr 5 w Gdyni" autocomplete="organization" disabled />
                 </div>
-                <div class="flience-field">
-                    <label for="organization-type">Typ placówki</label>
-                    <select id="organization-type" class="flience-input flience-select" name="organizationType" disabled>
+                <div class="flience-field flience-field--select">
+                    <label id="organization-type-label" for="organization-type">Typ placówki</label>
+                    <div class="flience-select" data-select>
+                        <select id="organization-type" class="flience-select-native" name="organizationType" disabled data-select-native>
                         <option value="">Wybierz typ placówki</option>
                         <option>Przedszkole</option>
                         <option>Szkoła podstawowa</option>
                         <option>Szkoła ponadpodstawowa</option>
                         <option>Inna organizacja</option>
-                    </select>
+                        </select>
+                        <button class="flience-select-trigger" type="button" aria-labelledby="organization-type-label" aria-controls="organization-type-options" aria-expanded="false" aria-haspopup="listbox" disabled data-select-trigger>
+                            <span class="flience-select-value" data-select-value>Wybierz typ placówki</span>
+                            <span class="flience-select-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div id="organization-type-options" class="flience-select-options" role="listbox" aria-labelledby="organization-type-label" hidden data-select-options>
+                            <button class="flience-select-option" type="button" role="option" aria-selected="true" data-select-option data-value="">Wybierz typ placówki</button>
+                            <button class="flience-select-option" type="button" role="option" aria-selected="false" data-select-option data-value="Przedszkole">Przedszkole</button>
+                            <button class="flience-select-option" type="button" role="option" aria-selected="false" data-select-option data-value="Szkoła podstawowa">Szkoła podstawowa</button>
+                            <button class="flience-select-option" type="button" role="option" aria-selected="false" data-select-option data-value="Szkoła ponadpodstawowa">Szkoła ponadpodstawowa</button>
+                            <button class="flience-select-option" type="button" role="option" aria-selected="false" data-select-option data-value="Inna organizacja">Inna organizacja</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="flience-field">
                     <label for="organization-tax-id">NIP <span>(opcjonalnie)</span></label>

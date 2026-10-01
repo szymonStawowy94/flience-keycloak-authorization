@@ -12,7 +12,7 @@
 .flience-password-toggle img { inline-size: 18px; block-size: 18px; }
 .flience-password-toggle:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 2px; border-radius: 50%; }
 .flience-forgot-password, .flience-sign-up a { color: var(--color-accent-link); font-weight: var(--typo-body-sm-weight); text-decoration: none; }
-.flience-forgot-password { justify-self: end; margin-block-start: 8px; font-size: var(--typo-body-sm-size); line-height: 25px; }
+.flience-forgot-password { justify-self: center; margin-block-start: 8px; font-size: var(--typo-body-sm-size); line-height: 25px; }
 .flience-remember-me { display: inline-flex; align-items: center; gap: 12px; color: var(--color-text-secondary); cursor: pointer; font-size: var(--typo-body-sm-size); font-weight: var(--typo-body-sm-weight); line-height: 25px; }
 .flience-remember-me input { appearance: none; display: grid; box-sizing: border-box; inline-size: 19px; block-size: 19px; margin: 0; place-content: center; border: 2px solid var(--color-border-input); border-radius: 4px; background: var(--color-bg-elevated); cursor: pointer; }
 .flience-remember-me input::after { inline-size: 8px; block-size: 4px; border-block-end: 2px solid var(--color-text-primary); border-inline-start: 2px solid var(--color-text-primary); content: ""; opacity: 0; transform: rotate(-45deg) translate(1px, -1px); }

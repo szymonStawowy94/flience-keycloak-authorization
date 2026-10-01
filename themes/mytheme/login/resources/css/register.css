@@ -8,9 +8,24 @@
 .flience-registration-section h2 { margin: 0 0 4px; color: var(--color-text-primary); font-size: 24px; font-weight: var(--font-weight-900); line-height: 1.2; }
 .flience-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .flience-form-hint, .flience-organization-hint { margin: -8px 0 0; color: var(--color-text-secondary); font-size: 13px; font-weight: var(--font-weight-300); line-height: 1.4; }
+.flience-form-hint { text-align: center; }
 .flience-organization-hint { margin-top: 0; padding-top: 4px; }
 .flience-field label span { color: var(--color-text-secondary); font-weight: var(--font-weight-300); }
-.flience-select { appearance: auto; padding-inline-end: 24px; }
+.flience-field--select { position: relative; }
+.flience-select { position: relative; inline-size: 100%; }
+.flience-select-native { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.flience-select-trigger { display: flex; box-sizing: border-box; inline-size: 100%; block-size: 48px; align-items: center; gap: 16px; padding-inline: 24px; border: 2px solid var(--color-border-strong); border-radius: 26.5px; background: var(--color-bg-elevated); color: var(--color-text-placeholder); font-family: var(--typo-field-label-family); font-size: var(--typo-field-label-size); font-weight: var(--typo-field-label-weight); line-height: 1; text-align: start; cursor: pointer; }
+.flience-select-trigger:disabled { cursor: default; opacity: .6; }
+.flience-select[data-select-filled="true"] .flience-select-trigger { color: var(--color-text-primary); }
+.flience-select-trigger:focus-visible, .flience-select[data-select-open="true"] .flience-select-trigger { border-color: var(--color-accent-cta); outline: none; }
+.flience-select-value { flex: 1 1 auto; min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.flience-select-chevron { inline-size: 12px; block-size: 12px; flex: 0 0 auto; border-block-end: 2px solid currentColor; border-inline-end: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform .15s ease; }
+.flience-select[data-select-open="true"] .flience-select-chevron { transform: rotate(225deg) translate(-2px, -2px); }
+.flience-select-options { position: absolute; z-index: 3; inset-block-start: calc(100% + 8px); inline-size: 100%; display: grid; gap: 2px; box-sizing: border-box; padding: 8px; border: 2px solid var(--color-accent-cta); border-radius: 16px; background: var(--color-bg-elevated); box-shadow: 0 10px 30px rgb(60 60 59 / 8%); }
+.flience-select-options[hidden] { display: none; }
+.flience-select-option { inline-size: 100%; padding: 10px 16px; border: 0; border-radius: 12px; background: transparent; color: var(--color-text-primary); font-family: var(--font-family-museo); font-size: 14px; font-weight: var(--font-weight-500); line-height: 1.4; text-align: start; cursor: pointer; }
+.flience-select-option[aria-selected="true"], .flience-select-option:hover { background: var(--color-bg-surface-mieta); }
+.flience-select-option:focus-visible { outline: 2px solid var(--color-accent-cta); outline-offset: -2px; }
 .flience-registration-consents { display: grid; gap: 8px; padding-top: 4px; }
 .flience-consent { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; color: var(--color-text-secondary); font-size: 14px; font-weight: var(--font-weight-300); line-height: 1.45; cursor: pointer; }
 .flience-consent input { appearance: none; display: grid; box-sizing: border-box; inline-size: 20px; block-size: 20px; margin: 0; place-content: center; border: 1px solid var(--color-border-subtle); border-radius: 5px; background: var(--color-bg-elevated); cursor: pointer; }
