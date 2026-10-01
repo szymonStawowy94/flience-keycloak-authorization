@@ -83,7 +83,7 @@
                     <div class="flience-login-divider" aria-hidden="true"><span>lub</span></div>
                     <div class="flience-social-providers">
                         <#list social.providers as p>
-                            <a id="zocial-${p.alias}" class="flience-social-provider flience-social-provider--${p.alias}" href="${p.loginUrl}"><#if p.iconClasses?has_content><i class="${p.iconClasses}" aria-hidden="true"></i></#if><span>Kontynuuj z ${kcSanitize(p.displayName)?no_esc}</span></a>
+                            <a id="zocial-${p.alias}" class="flience-social-provider flience-social-provider--${p.alias}" href="${p.loginUrl}"><#if p.alias == "google"><img class="flience-social-provider-icon" src="${url.resourcesPath}/img/icon_ui_google.svg" alt="" /><#elseif p.iconClasses?has_content><i class="${p.iconClasses}" aria-hidden="true"></i></#if><span>Kontynuuj z ${kcSanitize(p.displayName)?no_esc}</span></a>
                         </#list>
                     </div>
                 </#if>

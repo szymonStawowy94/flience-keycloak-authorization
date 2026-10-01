@@ -16,12 +16,7 @@
                 </div>
 
                 <div class="flience-field">
-                    <div class="flience-field-label-row">
-                        <label for="password">Hasło</label>
-                        <#if realm.resetPasswordAllowed>
-                            <a class="flience-forgot-password" tabindex="5" href="${url.loginResetCredentialsUrl}">Nie pamiętasz hasła?</a>
-                        </#if>
-                    </div>
+                    <label for="password">Hasło</label>
                     <div class="flience-password-control">
                         <input tabindex="2" id="password" class="flience-input" name="password" type="password" placeholder="hasło" autocomplete="current-password" aria-invalid="<#if messagesPerField.existsError('password')>true<#else>false</#if>" />
                         <button class="flience-password-toggle" type="button" aria-label="Pokaż hasło" aria-controls="password" data-password-toggle>
@@ -36,6 +31,9 @@
                     </div>
                     <#if messagesPerField.existsError('password')>
                         <span class="flience-field-error" id="input-error-password" role="alert">${kcSanitize(messagesPerField.get('password'))?no_esc}</span>
+                    </#if>
+                    <#if realm.resetPasswordAllowed>
+                        <a class="flience-forgot-password" tabindex="5" href="${url.loginResetCredentialsUrl}">Nie pamiętasz hasła</a>
                     </#if>
                 </div>
 
@@ -56,7 +54,11 @@
             <div class="flience-social-providers">
                 <#list social.providers as p>
                     <a id="zocial-${p.alias}" class="flience-social-provider flience-social-provider--${p.alias}" href="${p.loginUrl}">
-                        <#if p.iconClasses?has_content><i class="${p.iconClasses}" aria-hidden="true"></i></#if>
+                        <#if p.alias == "google">
+                            <img class="flience-social-provider-icon" src="${url.resourcesPath}/img/icon_ui_google.svg" alt="" />
+                        <#elseif p.iconClasses?has_content>
+                            <i class="${p.iconClasses}" aria-hidden="true"></i>
+                        </#if>
                         <span>Kontynuuj z ${kcSanitize(p.displayName)?no_esc}</span>
                     </a>
                 </#list>

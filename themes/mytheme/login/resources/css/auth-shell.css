@@ -21,10 +21,12 @@
 .flience-auth-intro { margin-block-end: 34px; padding-inline-start: 4px; }
 .flience-auth-intro #kc-page-title { margin: 0; font-size: 50px; font-weight: var(--font-weight-900); line-height: 1.2; }
 .flience-auth-subtitle { margin-block-start: 16px; font-size: 19px; font-weight: var(--font-weight-300); line-height: 1.2; }
-.flience-auth-content .card-pf { box-sizing: border-box; inline-size: 100%; padding: 40px; border: 1px solid var(--color-border-subtle); border-radius: 24px; background: var(--color-bg-elevated); box-shadow: 0 1px 2px rgb(60 60 59 / 8%), 0 10px 30px rgb(60 60 59 / 8%); }
+.flience-auth-content .card-pf { box-sizing: border-box; inline-size: 100%; padding: 0; border: 1px solid var(--color-border-subtle); border-radius: 24px; background: var(--color-bg-elevated); box-shadow: 0 1px 2px rgb(60 60 59 / 8%), 0 10px 30px rgb(60 60 59 / 8%); }
 .flience-auth-content .card-pf > header { display: none; }
+.flience-auth-content #kc-content { padding: 40px; }
 .flience-auth-content #kc-content-wrapper { inline-size: 100%; }
 .flience-auth-content #kc-header-wrapper { display: none; }
+.flience-auth-content #kc-info { position: static; display: block; margin: 24px 0 0; padding: 0; }
 .flience-auth-content #kc-info > * { margin: 0; }
 
 @media (width < 80rem) {
@@ -48,4 +50,4 @@
 
 @media (width >= 80rem) and (width < 120rem) { .flience-auth-shell { --flience-auth-grid-padding: 50px; } .flience-auth-sky { grid-column: 1 / span 5; padding-inline-start: var(--flience-auth-grid-padding); padding-block-end: 64px; } .flience-auth-logo { inset-inline-start: 40px; } .flience-auth-kiwi { inline-size: 347px; inset-inline-start: 18%; } }
 @media (width >= 120rem) { .flience-auth-shell { --flience-auth-grid-padding: 226px; } }
-@media (width < 36rem) { .flience-auth-shell { column-gap: var(--space-12); --flience-auth-grid-padding: var(--space-20); } .flience-auth-content .card-pf { padding: var(--space-20); border-radius: 20px; } .flience-auth-intro #kc-page-title { font-size: 36px; } }
+@media (width < 36rem) { .flience-auth-shell { column-gap: var(--space-12); --flience-auth-grid-padding: var(--space-20); } .flience-auth-content .card-pf { border-radius: 20px; } .flience-auth-content #kc-content { padding: var(--space-20); } .flience-auth-intro #kc-page-title { font-size: 36px; } }
