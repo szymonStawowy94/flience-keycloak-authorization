@@ -50,4 +50,65 @@
 
 @media (width >= 80rem) and (width < 120rem) { .flience-auth-shell { --flience-auth-grid-padding: 50px; } .flience-auth-sky { grid-column: 1 / span 5; padding-inline-start: var(--flience-auth-grid-padding); padding-block-end: 64px; } .flience-auth-logo { inset-inline-start: 40px; } .flience-auth-kiwi { inline-size: 347px; inset-inline-start: 18%; } }
 @media (width >= 120rem) { .flience-auth-shell { --flience-auth-grid-padding: 226px; } }
-@media (width < 36rem) { .flience-auth-shell { column-gap: var(--space-12); --flience-auth-grid-padding: var(--space-20); } .flience-auth-content .card-pf { border-radius: 20px; } .flience-auth-content #kc-content { padding: var(--space-20); } .flience-auth-intro #kc-page-title { font-size: 36px; } }
+@media (width < 36rem) {
+  .flience-auth-shell {
+    --flience-auth-grid-padding: var(--space-page-margin);
+    grid-template-rows: 240px minmax(0, 1fr);
+    column-gap: var(--space-12);
+  }
+
+  .flience-auth-sky { block-size: 240px; }
+
+  .flience-auth-logo {
+    inset-block-start: var(--space-24);
+    inset-inline-start: calc(var(--space-page-margin) + var(--space-8));
+    inline-size: 42px;
+  }
+
+  .flience-auth-kiwi {
+    inset-block-start: 111px;
+    inset-inline-start: 81px;
+    inline-size: 193px;
+    transform: none;
+  }
+
+  .flience-auth-cloud--top {
+    inset-block-start: 62px;
+    inset-inline-start: 222px;
+    inline-size: 127px;
+  }
+
+  .flience-auth-cloud--middle {
+    inset-block-start: 249px;
+    inset-inline-start: -36px;
+    inline-size: 149px;
+  }
+
+  .flience-auth-cloud--bottom {
+    display: block;
+    inset-block-start: 311px;
+    inset-inline-start: 191px;
+    inline-size: 97px;
+  }
+
+  .flience-auth-content { padding-block: var(--space-24) var(--space-40); }
+
+  .flience-auth-intro {
+    margin-block-end: var(--space-16);
+    padding-inline-start: 0;
+  }
+
+  .flience-auth-intro #kc-page-title {
+    font-size: var(--typo-h1-size);
+    line-height: normal;
+  }
+
+  .flience-auth-subtitle {
+    font-size: var(--typo-lead-size);
+    line-height: normal;
+  }
+
+  .flience-auth-content .card-pf { border-radius: 24px; }
+  .flience-auth-content #kc-content { padding: var(--space-card-pad); }
+  .flience-auth-content #kc-content-wrapper { box-sizing: border-box; padding-block: var(--space-4); }
+}

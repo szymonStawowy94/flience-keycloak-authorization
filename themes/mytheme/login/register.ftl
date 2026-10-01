@@ -74,7 +74,7 @@
                                 <input id="password" class="flience-input" name="password" type="password" placeholder="hasło" autocomplete="new-password" required aria-invalid="<#if messagesPerField.existsError('password')>true<#else>false</#if>" />
                                 <button class="flience-password-toggle" type="button" aria-label="Pokaż hasło" aria-controls="password" data-password-toggle><img data-password-toggle-icon data-visible-src="${url.resourcesPath}/img/icon_ui_eye.svg" data-hidden-src="${url.resourcesPath}/img/icon_ui_invisible.svg" src="${url.resourcesPath}/img/icon_ui_invisible.svg" alt="" /></button>
                             </div>
-                            <p class="flience-form-hint">Co najmniej 8 znaków</p>
+                            <p class="flience-form-hint flience-password-length-hint">Co najmniej 8 znaków</p>
                             <#if messagesPerField.existsError('password')><span class="flience-field-error" role="alert">${kcSanitize(messagesPerField.get('password'))?no_esc}</span></#if>
                         </div>
                         <div class="flience-field">
