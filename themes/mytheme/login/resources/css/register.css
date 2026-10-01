@@ -1,0 +1,10 @@
+.flience-register-form { gap: 20px; }
+.flience-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.flience-form-hint { margin: 0; color: var(--color-text-secondary); font-size: 13px; font-weight: var(--font-weight-300); line-height: 1.4; }
+.flience-info-copy { display: grid; gap: 16px; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-300); line-height: 1.5; }
+.flience-info-copy p { margin: 0; }
+.flience-info-copy strong { color: var(--color-text-primary); font-weight: var(--font-weight-900); }
+.flience-secondary-action { display: inline-flex; box-sizing: border-box; inline-size: fit-content; min-block-size: 48px; align-items: center; justify-content: center; padding-inline: 24px; border: 2px solid var(--color-border-strong); border-radius: 999px; background: var(--color-bg-elevated); color: var(--color-text-primary); font: inherit; font-size: 16px; font-weight: var(--font-weight-900); text-decoration: none; cursor: pointer; }
+.flience-secondary-action:hover { background: var(--color-bg-surface-mieta); }
+.flience-secondary-action:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 3px; }
+@media (width < 36rem) { .flience-form-row { grid-template-columns: 1fr; } }

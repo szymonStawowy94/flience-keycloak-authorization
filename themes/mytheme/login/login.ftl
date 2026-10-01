@@ -3,7 +3,7 @@
     <#if section = "header">
         Zaloguj się
     <#elseif section = "subtitle">
-        Wpisz swój adres email i hasło.
+        i wracaj do swoich materiałów!
     <#elseif section = "form">
         <#if realm.password>
             <form id="kc-form-login" class="flience-login-form" action="${url.loginAction}" method="post">
@@ -55,16 +55,16 @@
             <div class="flience-login-divider" aria-hidden="true"><span>lub</span></div>
             <div class="flience-social-providers">
                 <#list social.providers as p>
-                    <a id="zocial-${p.alias}" class="flience-social-provider" href="${p.loginUrl}">
+                    <a id="zocial-${p.alias}" class="flience-social-provider flience-social-provider--${p.alias}" href="${p.loginUrl}">
                         <#if p.iconClasses?has_content><i class="${p.iconClasses}" aria-hidden="true"></i></#if>
-                        <span>${kcSanitize(p.displayName)?no_esc}</span>
+                        <span>Kontynuuj z ${kcSanitize(p.displayName)?no_esc}</span>
                     </a>
                 </#list>
             </div>
         </#if>
     <#elseif section = "info">
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
-            <p class="flience-sign-up">Nie masz konta? <a tabindex="6" href="${url.registrationUrl}">Zarejestruj się</a></p>
+            <p class="flience-sign-up">Nie masz konta? <a tabindex="6" href="${url.registrationUrl}">Załóż darmowe</a></p>
         </#if>
     </#if>
 </@layout.registrationLayout>
