@@ -1,7 +1,7 @@
 .flience-auth-context:empty { display: none; }
 .flience-registration-context { margin: 16px 0 0; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-300); line-height: 1.5; }
 .flience-registration-context a { color: var(--color-text-primary); font-weight: var(--font-weight-900); text-underline-offset: 3px; }
-.flience-registration-page .flience-auth-content .card-pf { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.flience-registration-page .flience-auth-content .card-pf, .flience-registration-page .flience-auth-content #kc-content { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .flience-register-form { display: grid; gap: 24px; }
 .flience-registration-section { display: grid; gap: 20px; box-sizing: border-box; padding: 40px; border: 1px solid var(--color-border-subtle); border-radius: 24px; background: var(--color-bg-elevated); box-shadow: 0 1px 2px rgb(60 60 59 / 8%), 0 10px 30px rgb(60 60 59 / 8%); }
 .flience-registration-section[hidden] { display: none; }
