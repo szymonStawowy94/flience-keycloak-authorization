@@ -1,0 +1,33 @@
+.flience-login-form { display: grid; gap: 24px; }
+.flience-field { display: grid; gap: 6px; }
+.flience-field label, .flience-remember-me { font-size: 14px; font-weight: var(--font-weight-900); line-height: 1.4; }
+.flience-field-label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.flience-input { box-sizing: border-box; inline-size: 100%; block-size: 48px; padding-inline: 24px; border: 2px solid var(--color-border-strong); border-radius: 999px; outline: 0; background: var(--color-bg-elevated); color: var(--color-text-primary); font: inherit; }
+.flience-input:focus-visible { border-color: var(--color-border-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-border-focus) 24%, transparent); }
+.flience-input[aria-invalid="true"] { border-color: #c83832; }
+.flience-password-control { position: relative; }
+.flience-password-control .flience-input { padding-inline-end: 60px; }
+.flience-password-toggle { position: absolute; inset-block: 0; inset-inline-end: 16px; display: grid; inline-size: 32px; place-items: center; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.flience-password-toggle img { inline-size: 24px; block-size: 24px; }
+.flience-password-toggle:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 2px; border-radius: 50%; }
+.flience-forgot-password, .flience-sign-up a { color: var(--color-accent-link); font-weight: var(--font-weight-900); text-decoration: underline; text-underline-offset: 2px; }
+.flience-forgot-password { font-size: 14px; }
+.flience-remember-me { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
+.flience-remember-me input { inline-size: 20px; block-size: 20px; margin: 0; accent-color: var(--color-accent-cta); }
+.flience-submit, .flience-social-provider { display: flex; box-sizing: border-box; inline-size: 100%; align-items: center; justify-content: center; min-block-size: 48px; border-radius: 999px; font: inherit; font-size: 16px; font-weight: var(--font-weight-900); }
+.flience-submit { border: 0; background: var(--color-accent-cta); color: var(--color-text-on-accent); cursor: pointer; }
+.flience-submit:hover { background: var(--color-accent-cta-hover); }
+.flience-submit:focus-visible, .flience-social-provider:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 3px; }
+.flience-login-divider { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; margin-block: 32px; color: var(--color-text-secondary); font-size: 14px; font-weight: var(--font-weight-500); }
+.flience-login-divider::before, .flience-login-divider::after { block-size: 1px; background: var(--color-border-subtle); content: ""; }
+.flience-social-providers { display: grid; gap: 12px; }
+.flience-social-provider { min-block-size: 56px; border: 2px solid var(--color-border-strong); background: var(--color-bg-elevated); color: var(--color-text-primary); text-decoration: none; }
+.flience-social-provider i { margin-inline-end: 10px; }
+.flience-sign-up { margin-block: 24px 0; text-align: center; font-size: 14px; font-weight: var(--font-weight-500); }
+.flience-field-error { color: #c83832; font-size: 13px; font-weight: var(--font-weight-500); }
+.alert-error, .alert-warning, .alert-success, .alert-info { margin-block-end: 20px; padding: 12px 16px; border-radius: 12px; font-size: 14px; }
+.alert-error { background: #fde9e7; color: #8f2923; }
+.alert-warning { background: #fff4d6; color: #715300; }
+.alert-success { background: #e3f5e7; color: #1e6a37; }
+.alert-info { background: #e1f2f7; color: #1e5d79; }
+@media (width < 36rem) { .flience-field-label-row { align-items: flex-start; flex-direction: column; gap: 4px; } }

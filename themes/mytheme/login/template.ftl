@@ -45,28 +45,33 @@
 <body class="flience-auth-page ${properties.kcBodyClass!} ${bodyClass}" data-page-id="login-${pageId}">
     <div class="flience-auth-shell">
         <aside class="flience-auth-sky" aria-hidden="true">
+            <img class="flience-auth-logo" src="${url.resourcesPath}/img/branding_logo-flience.svg" alt="" />
             <img class="flience-auth-cloud flience-auth-cloud--top" src="${url.resourcesPath}/img/cloud.svg" alt="" />
+            <img class="flience-auth-cloud flience-auth-cloud--middle" src="${url.resourcesPath}/img/cloud.svg" alt="" />
             <img class="flience-auth-kiwi" src="${url.resourcesPath}/img/kiwi_kiwi-flying.svg" alt="" />
             <img class="flience-auth-cloud flience-auth-cloud--bottom" src="${url.resourcesPath}/img/cloud.svg" alt="" />
+            <div class="flience-auth-sky-copy">
+                <p class="flience-auth-sky-title">Tam, gdzie edukacja dostaje skrzydeł.</p>
+                <p class="flience-auth-sky-description">Piękne pomoce naukowe do druku w domu i w klasie.</p>
+            </div>
         </aside>
         <main class="flience-auth-content">
             <div class="${properties.kcLoginClass!}">
-                <div id="kc-header" class="${properties.kcHeaderClass!}">
+                <div id="kc-header" class="${properties.kcHeaderClass!} flience-auth-intro">
                     <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
-                </div>
-                <div class="${properties.kcFormCardClass!}">
-                    <header class="${properties.kcFormHeaderClass!}">
-                        <#if realm.internationalizationEnabled && locale.supported?size gt 1>
-                            <div class="${properties.kcLocaleMainClass!}" id="kc-locale">
-                                <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
-                                    <div id="kc-locale-dropdown" class="${properties.kcLocaleDropDownClass!}">
-                                        <#list locale.supported as l><a href="${l.url}">${l.label}</a></#list>
-                                    </div>
+                    <#if realm.internationalizationEnabled && locale.supported?size gt 1>
+                        <div class="${properties.kcLocaleMainClass!}" id="kc-locale">
+                            <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
+                                <div id="kc-locale-dropdown" class="${properties.kcLocaleDropDownClass!}">
+                                    <#list locale.supported as l><a href="${l.url}">${l.label}</a></#list>
                                 </div>
                             </div>
-                        </#if>
-                        <h1 id="kc-page-title"><#nested "header"></h1>
-                    </header>
+                        </div>
+                    </#if>
+                    <h1 id="kc-page-title"><#nested "header"></h1>
+                    <div class="flience-auth-subtitle"><#nested "subtitle"></div>
+                </div>
+                <div class="${properties.kcFormCardClass!}">
                     <div id="kc-content"><div id="kc-content-wrapper">
                         <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
                             <div class="alert-${message.type} ${properties.kcAlertClass!}" role="alert">
