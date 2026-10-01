@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector("[data-password-toggle]");
   const password = document.querySelector("#password");
+  const icon = document.querySelector("[data-password-toggle-icon]");
 
-  if (!(toggle instanceof HTMLButtonElement) || !(password instanceof HTMLInputElement)) return;
+  if (!(toggle instanceof HTMLButtonElement) || !(password instanceof HTMLInputElement) || !(icon instanceof HTMLImageElement)) return;
+
+  const updateToggle = (isVisible) => {
+    password.type = isVisible ? "text" : "password";
+    icon.src = isVisible ? icon.dataset.visibleSrc : icon.dataset.hiddenSrc;
+    toggle.setAttribute("aria-label", isVisible ? "Ukryj hasło" : "Pokaż hasło");
+  };
 
   toggle.addEventListener("click", () => {
-    const isVisible = password.type === "text";
-    password.type = isVisible ? "password" : "text";
-    toggle.setAttribute("aria-label", isVisible ? "Pokaż hasło" : "Ukryj hasło");
+    updateToggle(password.type !== "text");
   });
 });

@@ -25,7 +25,13 @@
                     <div class="flience-password-control">
                         <input tabindex="2" id="password" class="flience-input" name="password" type="password" autocomplete="current-password" aria-invalid="<#if messagesPerField.existsError('password')>true<#else>false</#if>" />
                         <button class="flience-password-toggle" type="button" aria-label="Pokaż hasło" aria-controls="password" data-password-toggle>
-                            <img src="${url.resourcesPath}/img/icon_ui_eye.svg" alt="" />
+                            <img
+                                data-password-toggle-icon
+                                data-visible-src="${url.resourcesPath}/img/icon_ui_eye.svg"
+                                data-hidden-src="${url.resourcesPath}/img/icon_ui_invisible.svg"
+                                src="${url.resourcesPath}/img/icon_ui_invisible.svg"
+                                alt=""
+                            />
                         </button>
                     </div>
                     <#if messagesPerField.existsError('password')>
