@@ -1,9 +1,9 @@
 :root { color-scheme: light; }
 
 .flience-auth-page { min-block-size: 100dvh; margin: 0; background: var(--color-bg-surface-mieta); color: var(--color-text-primary); font-family: var(--font-family-museo), Arial, sans-serif; }
-.flience-auth-shell { --flience-auth-grid-padding: var(--space-20); display: grid; min-block-size: 100dvh; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-16); padding-inline: var(--flience-auth-grid-padding); }
+.flience-auth-shell { --flience-auth-grid-padding: var(--space-20); display: grid; min-block-size: 100dvh; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: minmax(100dvh, max-content); column-gap: var(--space-16); padding-inline: var(--flience-auth-grid-padding); }
 
-.flience-auth-sky { position: relative; display: flex; box-sizing: border-box; flex-direction: column; justify-content: flex-end; grid-column: 1 / span 4; inline-size: calc(100% + var(--flience-auth-grid-padding)); min-block-size: 100%; padding: 56px 0 149px var(--flience-auth-grid-padding); overflow: hidden; background: var(--color-bg-page-mieta); margin-inline-start: calc(var(--flience-auth-grid-padding) * -1); }
+.flience-auth-sky { position: sticky; inset-block-start: 0; display: flex; box-sizing: border-box; flex-direction: column; justify-content: flex-end; grid-column: 1 / span 4; grid-row: 1; align-self: start; inline-size: calc(100% + var(--flience-auth-grid-padding)); block-size: 100dvh; padding: 56px 0 149px var(--flience-auth-grid-padding); overflow: hidden; background: var(--color-bg-page-mieta); margin-inline-start: calc(var(--flience-auth-grid-padding) * -1); }
 .flience-auth-logo, .flience-auth-kiwi, .flience-auth-cloud { position: absolute; }
 .flience-auth-logo { z-index: 2; inline-size: 95px; inset-block-start: 56px; inset-inline-start: 64px; }
 .flience-auth-kiwi { z-index: 1; inline-size: 434px; block-size: auto; inset-block-start: 250px; inset-inline-start: 183px; }
@@ -16,7 +16,7 @@
 .flience-auth-sky-title { inline-size: 360px; font-size: 30px; font-weight: var(--font-weight-900); line-height: 1.2; }
 .flience-auth-sky-description { inline-size: 422px; margin-block-start: 18px !important; font-size: 16px; font-weight: var(--font-weight-300); line-height: 1.5; }
 
-.flience-auth-content { display: grid; grid-template-columns: minmax(0, 1fr); grid-column: 6 / span 6; min-inline-size: 0; align-items: start; padding-block-start: 122px; }
+.flience-auth-content { display: grid; grid-template-columns: minmax(0, 1fr); grid-column: 6 / span 6; grid-row: 1; min-inline-size: 0; align-items: start; padding-block-start: 122px; }
 .flience-auth-content > .login-pf-page, .flience-auth-content > #kc-container, .flience-auth-content > div { inline-size: 720px !important; max-inline-size: 100%; grid-column: auto !important; grid-row: auto !important; align-self: start; justify-self: start; margin-block: 0; margin-inline: 4px 0; }
 .flience-auth-intro { margin-block-end: 34px; padding-inline-start: 4px; }
 .flience-auth-intro #kc-page-title { margin: 0; font-size: 50px; font-weight: var(--font-weight-900); line-height: 1.2; }
@@ -29,7 +29,7 @@
 
 @media (width < 80rem) {
   .flience-auth-shell { grid-template-rows: minmax(13rem, 30dvh) minmax(0, 1fr); --flience-auth-grid-padding: var(--space-24); }
-  .flience-auth-sky { grid-column: 1 / -1; grid-row: 1; min-block-size: 0; inline-size: auto; padding: 0; margin-inline: calc(var(--flience-auth-grid-padding) * -1); }
+  .flience-auth-sky { position: relative; inset-block-start: auto; grid-column: 1 / -1; grid-row: 1; align-self: stretch; block-size: auto; min-block-size: 0; inline-size: auto; padding: 0; margin-inline: calc(var(--flience-auth-grid-padding) * -1); }
   .flience-auth-logo { inset-block-start: var(--space-20); inset-inline-start: var(--space-24); inline-size: 76px; }
   .flience-auth-kiwi { inline-size: clamp(10rem, 30vw, 14rem); inset-block-start: 111px; inset-inline-start: 50%; transform: translateX(-50%); }
   .flience-auth-cloud--top { inline-size: 10rem; inset-block-start: 1.5rem; inset-inline-start: 70%; }

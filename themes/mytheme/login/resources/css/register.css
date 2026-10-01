@@ -1,10 +1,18 @@
-.flience-register-form { gap: 20px; }
+.flience-auth-context:empty { display: none; }
+.flience-registration-context { margin: 16px 0 0; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-300); line-height: 1.5; }
+.flience-registration-context a { color: var(--color-text-primary); font-weight: var(--font-weight-900); text-underline-offset: 3px; }
+.flience-registration-page .flience-auth-content .card-pf { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.flience-register-form { display: grid; gap: 24px; }
+.flience-registration-section { display: grid; gap: 20px; box-sizing: border-box; padding: 40px; border: 1px solid var(--color-border-subtle); border-radius: 24px; background: var(--color-bg-elevated); box-shadow: 0 1px 2px rgb(60 60 59 / 8%), 0 10px 30px rgb(60 60 59 / 8%); }
+.flience-registration-section[hidden] { display: none; }
+.flience-registration-section h2 { margin: 0 0 4px; color: var(--color-text-primary); font-size: 24px; font-weight: var(--font-weight-900); line-height: 1.2; }
 .flience-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.flience-form-hint { margin: 0; color: var(--color-text-secondary); font-size: 13px; font-weight: var(--font-weight-300); line-height: 1.4; }
-.flience-info-copy { display: grid; gap: 16px; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-300); line-height: 1.5; }
-.flience-info-copy p { margin: 0; }
-.flience-info-copy strong { color: var(--color-text-primary); font-weight: var(--font-weight-900); }
-.flience-secondary-action { display: inline-flex; box-sizing: border-box; inline-size: fit-content; min-block-size: 48px; align-items: center; justify-content: center; padding-inline: 24px; border: 2px solid var(--color-border-strong); border-radius: 999px; background: var(--color-bg-elevated); color: var(--color-text-primary); font: inherit; font-size: 16px; font-weight: var(--font-weight-900); text-decoration: none; cursor: pointer; }
-.flience-secondary-action:hover { background: var(--color-bg-surface-mieta); }
-.flience-secondary-action:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 3px; }
-@media (width < 36rem) { .flience-form-row { grid-template-columns: 1fr; } }
+.flience-form-hint, .flience-organization-hint { margin: -8px 0 0; color: var(--color-text-secondary); font-size: 13px; font-weight: var(--font-weight-300); line-height: 1.4; }
+.flience-organization-hint { margin-top: 0; padding-top: 4px; }
+.flience-field label span { color: var(--color-text-secondary); font-weight: var(--font-weight-300); }
+.flience-select { appearance: auto; padding-inline-end: 24px; }
+.flience-registration-consents { display: grid; gap: 12px; padding-top: 4px; }
+.flience-consent { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; color: var(--color-text-secondary); font-size: 14px; font-weight: var(--font-weight-300); line-height: 1.45; cursor: pointer; }
+.flience-consent input { inline-size: 20px; block-size: 20px; margin: 0; accent-color: var(--color-accent-cta); }
+.flience-login-divider { margin-top: 4px; }
+@media (width < 36rem) { .flience-registration-section { padding: var(--space-20); border-radius: 20px; } .flience-form-row { grid-template-columns: 1fr; } }

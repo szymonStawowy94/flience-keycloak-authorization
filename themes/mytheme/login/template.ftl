@@ -70,6 +70,7 @@
                     </#if>
                     <h1 id="kc-page-title"><#nested "header"></h1>
                     <div class="flience-auth-subtitle"><#nested "subtitle"></div>
+                    <div class="flience-auth-context"><#nested "context"></div>
                 </div>
                 <div class="${properties.kcFormCardClass!}">
                     <div id="kc-content"><div id="kc-content-wrapper">

@@ -3,7 +3,8 @@
 .flience-field label, .flience-remember-me { font-size: 14px; font-weight: var(--font-weight-900); line-height: 1.4; }
 .flience-field-label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .flience-input { box-sizing: border-box; inline-size: 100%; block-size: 48px; padding-inline: 24px; border: 2px solid var(--color-border-strong); border-radius: 999px; outline: 0; background: var(--color-bg-elevated); color: var(--color-text-primary); font: inherit; }
-.flience-input:focus-visible { border-color: var(--color-border-focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-border-focus) 24%, transparent); }
+.flience-input::placeholder { color: var(--color-text-placeholder); opacity: 1; }
+.flience-input:focus-visible { border-color: var(--color-accent-cta); box-shadow: none; }
 .flience-input[aria-invalid="true"] { border-color: #c83832; }
 .flience-password-control { position: relative; }
 .flience-password-control .flience-input { padding-inline-end: 60px; }

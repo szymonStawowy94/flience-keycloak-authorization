@@ -9,7 +9,7 @@
             <form id="kc-form-login" class="flience-login-form" action="${url.loginAction}" method="post">
                 <div class="flience-field">
                     <label for="username">Adres email</label>
-                    <input tabindex="1" id="username" class="flience-input" name="username" value="${(login.username!'')}" type="email" autocomplete="username" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true<#else>false</#if>" />
+                    <input tabindex="1" id="username" class="flience-input" name="username" value="${(login.username!'')}" type="email" placeholder="email" autocomplete="username" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true<#else>false</#if>" />
                     <#if messagesPerField.existsError('username')>
                         <span class="flience-field-error" id="input-error-username" role="alert">${kcSanitize(messagesPerField.get('username'))?no_esc}</span>
                     </#if>
@@ -23,7 +23,7 @@
                         </#if>
                     </div>
                     <div class="flience-password-control">
-                        <input tabindex="2" id="password" class="flience-input" name="password" type="password" autocomplete="current-password" aria-invalid="<#if messagesPerField.existsError('password')>true<#else>false</#if>" />
+                        <input tabindex="2" id="password" class="flience-input" name="password" type="password" placeholder="hasło" autocomplete="current-password" aria-invalid="<#if messagesPerField.existsError('password')>true<#else>false</#if>" />
                         <button class="flience-password-toggle" type="button" aria-label="Pokaż hasło" aria-controls="password" data-password-toggle>
                             <img
                                 data-password-toggle-icon
