@@ -11,8 +11,14 @@
 .flience-organization-hint { margin-top: 0; padding-top: 4px; }
 .flience-field label span { color: var(--color-text-secondary); font-weight: var(--font-weight-300); }
 .flience-select { appearance: auto; padding-inline-end: 24px; }
-.flience-registration-consents { display: grid; gap: 12px; padding-top: 4px; }
+.flience-registration-consents { display: grid; gap: 8px; padding-top: 4px; }
 .flience-consent { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; color: var(--color-text-secondary); font-size: 14px; font-weight: var(--font-weight-300); line-height: 1.45; cursor: pointer; }
-.flience-consent input { inline-size: 20px; block-size: 20px; margin: 0; accent-color: var(--color-accent-cta); }
+.flience-consent input { appearance: none; display: grid; box-sizing: border-box; inline-size: 20px; block-size: 20px; margin: 0; place-content: center; border: 1px solid var(--color-border-subtle); border-radius: 5px; background: var(--color-bg-elevated); cursor: pointer; }
+.flience-consent input::after { inline-size: 8px; block-size: 4px; border-block-end: 2px solid var(--color-text-primary); border-inline-start: 2px solid var(--color-text-primary); content: ""; opacity: 0; transform: rotate(-45deg) translate(1px, -1px); }
+.flience-consent input:checked { border-color: var(--color-bg-page-mieta); background: var(--color-bg-page-mieta); }
+.flience-consent input:checked::after { opacity: 1; }
+.flience-consent input:focus-visible { outline: 2px solid var(--color-accent-cta); outline-offset: 2px; }
+.flience-consent:hover input:not(:checked) { background: var(--color-bg-surface-mieta); }
+.flience-consent a { color: var(--color-accent-link); font-weight: var(--font-weight-500); text-decoration: underline; text-underline-offset: 2px; }
 .flience-login-divider { margin-top: 4px; }
 @media (width < 36rem) { .flience-registration-section { padding: var(--space-20); border-radius: 20px; } .flience-form-row { grid-template-columns: 1fr; } }
