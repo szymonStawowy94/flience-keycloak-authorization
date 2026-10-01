@@ -1,0 +1,4 @@
+interface:
+  display_name: "Keycloak Styling"
+  short_description: "Twórz utrzymywalne i dostępne widoki Keycloak"
+  default_prompt: "Użyj $keycloak-styling, aby zaimplementować lub zrecenzować przenośny widok motywu Keycloak."

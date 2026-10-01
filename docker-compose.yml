@@ -1,0 +1,18 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.4
+    command: start-dev --import-realm
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      KC_SPI_THEME_CACHE_THEMES: "false"
+      KC_SPI_THEME_CACHE_TEMPLATES: "false"
+    volumes:
+      - ./themes/mytheme:/opt/keycloak/themes/mytheme:ro
+      - ./realm-export:/opt/keycloak/data/import:ro
+      - keycloak_data:/opt/keycloak/data
+
+volumes:
+  keycloak_data:

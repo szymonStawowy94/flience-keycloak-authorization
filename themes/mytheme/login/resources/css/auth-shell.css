@@ -1,0 +1,111 @@
+:root {
+  color-scheme: light;
+}
+
+.flience-auth-page {
+  min-block-size: 100dvh;
+  margin: 0;
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-museo), Arial, sans-serif;
+}
+
+.flience-auth-shell {
+  display: grid;
+  min-block-size: 100dvh;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--space-16);
+  padding-inline: var(--space-32);
+}
+
+.flience-auth-sky {
+  position: relative;
+  display: grid;
+  grid-column: 1 / span 5;
+  min-block-size: 100%;
+  overflow: hidden;
+  place-items: center;
+  background: var(--color-bg-surface-mieta);
+}
+
+.flience-auth-kiwi {
+  position: relative;
+  z-index: 1;
+  inline-size: clamp(11rem, 28vw, 22rem);
+  block-size: auto;
+}
+
+.flience-auth-cloud {
+  position: absolute;
+  inline-size: clamp(5rem, 12vw, 10rem);
+  block-size: auto;
+  opacity: 0.8;
+}
+
+.flience-auth-cloud--top {
+  inset-block-start: 12%;
+  inset-inline-start: 12%;
+}
+
+.flience-auth-cloud--bottom {
+  inset-block-end: 14%;
+  inset-inline-end: 10%;
+  transform: scaleX(-1);
+}
+
+.flience-auth-content {
+  display: grid;
+  grid-column: 6 / span 5;
+  min-inline-size: 0;
+  padding-block: var(--space-24);
+  place-items: center;
+}
+
+.flience-auth-content > .login-pf-page,
+.flience-auth-content > #kc-container,
+.flience-auth-content > div {
+  inline-size: min(100%, 34rem);
+}
+
+.flience-auth-content .card-pf,
+.flience-auth-content #kc-content-wrapper {
+  inline-size: 100%;
+}
+
+@media (width < 80rem) {
+  .flience-auth-shell {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: minmax(12rem, 30dvh) minmax(0, 1fr);
+    padding-inline: var(--space-24);
+  }
+
+  .flience-auth-sky {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-block-size: 0;
+  }
+
+  .flience-auth-kiwi {
+    inline-size: clamp(8rem, 32vw, 12rem);
+  }
+
+  .flience-auth-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-items: start;
+    padding-block: var(--space-20);
+  }
+}
+
+@media (width < 36rem) {
+  .flience-auth-shell {
+    column-gap: var(--space-12);
+    padding-inline: var(--space-20);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flience-auth-cloud--bottom {
+    transform: none;
+  }
+}
