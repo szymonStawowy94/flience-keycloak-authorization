@@ -49,7 +49,14 @@
             <img class="flience-auth-logo" src="${url.resourcesPath}/img/branding_logo-flience.svg" alt="" />
             <img class="flience-auth-cloud flience-auth-cloud--top" src="${url.resourcesPath}/img/cloud.svg" alt="" />
             <img class="flience-auth-cloud flience-auth-cloud--middle" src="${url.resourcesPath}/img/cloud.svg" alt="" />
-            <img class="flience-auth-kiwi" src="${url.resourcesPath}/img/kiwi_kiwi-flying.svg" alt="" />
+            <div
+                class="flience-auth-kiwi"
+                data-kiwi-animation
+                data-lottie-animation="${url.resourcesPath}/lottie/kiwi.json"
+                aria-hidden="true"
+            >
+                <img class="flience-auth-kiwi-fallback" src="${url.resourcesPath}/img/kiwi_kiwi-flying.svg" alt="" />
+            </div>
             <img class="flience-auth-cloud flience-auth-cloud--bottom" src="${url.resourcesPath}/img/cloud.svg" alt="" />
             <div class="flience-auth-sky-copy">
                 <p class="flience-auth-sky-title">Tam, gdzie edukacja dostaje skrzydeł.</p>
