@@ -1,7 +1,7 @@
 ---
 name: keycloak-styling
 description: Implementowanie, refaktoryzowanie i przeglądanie przenośnych motywów oraz widoków interfejsu Keycloak z czytelnym podziałem na pliki, bezpieczną obsługą szablonów, dostępnym stylowaniem, lokalizacją i odpornością na aktualizacje. Używaj podczas pracy z natywnymi motywami FreeMarker, plikami theme.properties, widokami logowania, konta i wiadomości e-mail, CSS-em lub JavaScriptem motywu oraz istniejącymi narzędziami do tworzenia motywów.
-version: 1.1.0
+version: 1.2.0
 author: j.olcha@pleodigital.com
 scope: SHARED
 category: Frontend
@@ -37,6 +37,7 @@ Pomiń ten skill przy zmianach konfiguracji realmów, dostawców tożsamości, p
    - Przy pracy z CSS-em, tokenami, responsywnością i zasobami przeczytaj [styling-and-assets.md](references/styling-and-assets.md).
    - Przy pracy z JavaScriptem działającym w przeglądarce przeczytaj [frontend-code.md](references/frontend-code.md).
    - Przy pracy z semantyką, klawiaturą, komunikatami i ustawieniami regionalnymi przeczytaj [accessibility-and-localization.md](references/accessibility-and-localization.md).
+   - Przy dodawaniu lub zmianie obsługiwanych języków przeczytaj [localization-and-verification.md](references/localization-and-verification.md).
 5. Oceń wpływ na przyszłe aktualizacje.
    - Przeczytaj [upgrades.md](references/upgrades.md).
    - Porównuj zmodyfikowane pliki źródłowe przy każdej zmianie docelowej wersji Keycloak.
@@ -44,6 +45,7 @@ Pomiń ten skill przy zmianach konfiguracji realmów, dostawców tożsamości, p
 6. Zweryfikuj każdą zmianę motywu.
    - Uruchom istniejący build lub polecenie pakowania motywu.
    - Jeżeli repozytorium udostępnia lokalny sposób uruchomienia Keycloak, ręcznie sprawdź zmieniony stan formularza z błędem serwera oraz bez włączonego JavaScriptu.
+   - Gdy zmieniono lokalizację, sprawdź każdy wspierany język, przełącznik języka oraz kompletność kluczy komunikatów zgodnie z referencją lokalizacyjną.
    - Jeżeli którejś kontroli nie można wykonać, podaj przyczynę w raporcie.
 7. Zdaj raport z wyniku.
    - Wymień objęte zmianą widoki i stany.
@@ -69,6 +71,7 @@ Pomiń ten skill przy zmianach konfiguracji realmów, dostawców tożsamości, p
 | Dodawanie lub refaktoryzacja CSS-u, tokenów, fontów, ikon lub obrazów | [styling-and-assets.md](references/styling-and-assets.md) |
 | Dodawanie JavaScriptu działającego w przeglądarce | [frontend-code.md](references/frontend-code.md) |
 | Przegląd dostępności lub lokalizacji | [accessibility-and-localization.md](references/accessibility-and-localization.md) |
+| Dodawanie, zmiana lub testowanie języków | [localization-and-verification.md](references/localization-and-verification.md) |
 | Przygotowanie lub przegląd aktualizacji Keycloak | [upgrades.md](references/upgrades.md) |
 
 Wczytuj tylko referencje potrzebne do wykonania zadania. Instrukcje konkretnego repozytorium i docelowa wersja Keycloak mają pierwszeństwo przed ogólnymi przykładami.

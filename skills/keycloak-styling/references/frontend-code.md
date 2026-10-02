@@ -48,3 +48,12 @@ Przypinaj i aktualizuj zależności zgodnie z zasadami repozytorium. Nigdy nie �
 - Nie ujawniaj śladów stosu, wewnętrznych identyfikatorów, tokenów ani surowych treści odpowiedzi.
 - Używaj logowania deweloperskiego oszczędnie i przed przekazaniem usuń wrażliwe lub hałaśliwe logi.
 - Pozwalaj opcjonalnym ulepszeniom zawieść bez blokowania podstawowego formularza.
+
+## Lokalizuj zachowanie przeglądarkowe i walidację
+
+- Nie wpisuj tekstów dla użytkownika na stałe w JavaScripcie motywu.
+- Przekazuj mały, przetłumaczony zestaw komunikatów z FreeMarkera przez `data-*` albo inny istniejący, bezpieczny kontrakt strony; JavaScript powinien go tylko odczytywać.
+- Dla komunikatów z parametrami utrzymuj jeden klucz i podstawiaj wyłącznie dane prezentacyjne, bez budowania zdań z przetłumaczonych fragmentów.
+- Walidacja na `blur`, `input` albo `submit` jest wyłącznie ulepszeniem UX. Utrzymuj walidację i komunikaty serwera Keycloak jako granicę bezpieczeństwa.
+- Przy walidatorze niestandardowym jawnie określ, czy puste pole jest poprawne, jakie formatowanie wejścia akceptujesz oraz czy normalizacja wartości zmienia payload. Nie normalizuj payloadu bez uzgodnionego kontraktu serwera.
+- Testuj wysyłkę bez JavaScriptu, aby opcjonalna walidacja klientowa nie blokowała głównej ścieżki Keycloak.

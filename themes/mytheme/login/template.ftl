@@ -43,7 +43,7 @@
         </#list>
     </#if>
 </head>
-<body class="flience-auth-page ${properties.kcBodyClass!} ${bodyClass}" data-page-id="login-${pageId}">
+<body class="flience-auth-page ${properties.kcBodyClass!} ${bodyClass}" data-page-id="login-${pageId}" data-show-password-label="${msg('showPassword')}" data-hide-password-label="${msg('hidePassword')}" data-validation-required="${msg('validationRequired')}" data-validation-email="${msg('validationEmail')}" data-validation-too-short="${msg('validationTooShort')}" data-validation-generic="${msg('validationGeneric')}" data-validation-password-mismatch="${msg('validationPasswordMismatch')}" data-validation-nip="${msg('validationNip')}">
     <div class="flience-auth-shell">
         <aside class="flience-auth-sky" aria-hidden="true">
             <img class="flience-auth-logo" src="${url.resourcesPath}/img/branding_logo-flience.svg" alt="" />
@@ -57,8 +57,8 @@
             ></div>
             <img class="flience-auth-cloud flience-auth-cloud--bottom" src="${url.resourcesPath}/img/cloud.svg" alt="" />
             <div class="flience-auth-sky-copy">
-                <p class="flience-auth-sky-title">Tam, gdzie edukacja dostaje skrzydeł.</p>
-                <p class="flience-auth-sky-description">Piękne pomoce naukowe do druku w domu i w klasie.</p>
+                <p class="flience-auth-sky-title">${msg("authSkyTitle")}</p>
+                <p class="flience-auth-sky-description">${msg("authSkyDescription")}</p>
             </div>
         </aside>
         <main class="flience-auth-content">

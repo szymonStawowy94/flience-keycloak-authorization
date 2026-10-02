@@ -76,6 +76,13 @@ Animacja nie może opóźniać działań uwierzytelniania ani ukrywać zmian sta
 - Deklaruj fonty zapasowe i ograniczaj liczbę niestandardowych grubości.
 - Przed dodaniem plików potwierdź licencje fontów i zasady pakowania.
 
+### Animacje i Lottie
+
+- Traktuj animację jako dekoracyjne, opcjonalne ulepszenie: nie może opóźniać formularza ani komunikatu o błędzie.
+- Do motywu dołączaj tylko wymagany, wersjonowany plik playera oraz plik animacji; nie kopiuj całego katalogu `node_modules`.
+- Uwzględniaj `prefers-reduced-motion` i zapewnij bezpieczny stan, gdy player lub animacja się nie załadują.
+- Keycloak przeładowuje strony między ekranami. Nie obiecuj ciągłości klatki Lottie między widokami; wybierz statyczny zasób, brak fallbacku albo opóźnione uruchomienie wyłącznie po ocenie rzeczywistego odbioru.
+
 ## Sprawdź jakość CSS-u
 
 - Uruchom istniejący formatter.

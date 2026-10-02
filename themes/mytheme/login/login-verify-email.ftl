@@ -1,24 +1,24 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayInfo=true; section>
     <#if section = "header">
-        Sprawdź swoją skrzynkę
+        ${msg("verifyEmailHeading")}
     <#elseif section = "subtitle">
-        Potwierdź swój adres e-mail, aby aktywować konto.
+        ${msg("verifyEmailSubtitle")}
     <#elseif section = "form">
         <div class="flience-info-copy">
             <#if verifyEmail??>
-                <p>Wysłaliśmy link aktywacyjny na adres <strong>${kcSanitize(verifyEmail)?no_esc}</strong>.</p>
+                <p>${kcSanitize(msg("verifyEmailSentToAddress", verifyEmail))?no_esc}</p>
             <#else>
-                <p>Wysłaliśmy link aktywacyjny na Twój adres e-mail.</p>
+                <p>${msg("verifyEmailSent")}</p>
             </#if>
         </div>
         <#if isAppInitiatedAction??>
             <form id="kc-verify-email-form" class="flience-login-form" action="${url.loginAction}" method="post">
-                <button id="kc-submit" class="flience-submit" type="submit">Wyślij link ponownie</button>
-                <button class="flience-secondary-action" type="submit" name="cancel-aia" value="true" formnovalidate>Anuluj</button>
+                <button id="kc-submit" class="flience-submit" type="submit">${msg("sendLinkAgain")}</button>
+                <button class="flience-secondary-action" type="submit" name="cancel-aia" value="true" formnovalidate>${msg("cancel")}</button>
             </form>
         </#if>
     <#elseif section = "info">
-        <p class="flience-info-copy">Nie widzisz wiadomości? Sprawdź folder SPAM. Możesz także <a href="${url.loginAction}">wysłać link ponownie</a>.</p>
+        <p class="flience-info-copy">${msg("verifyEmailSpamNote")} <a href="${url.loginAction}">${msg("sendLinkAgainLowercase")}</a>.</p>
     </#if>
 </@layout.registrationLayout>

@@ -47,6 +47,13 @@ Nie twórz ogólnego makra z wieloma flagami logicznymi. Preferuj mniejsze makra
 - Zachowuj parametry komunikatów i formatowanie oczekiwane przez Keycloak.
 - Nie osadzaj HTML-a w tłumaczeniach jako ogólnej metody renderowania; bieżąca obsługa komunikatów motywu logowania Keycloak oczekuje zwykłego tekstu poza jawnie udokumentowanymi wyjątkami.
 
+## Rozdziel etykiety od kontraktów formularza
+
+- Lokalizuj tekst widoczny w `label`, `option`, przycisku i komunikacie, ale nie zmieniaj przez to wartości wysyłanej w formularzu.
+- Dla `select` jawnie ustawiaj stabilne `value`, gdy etykieta jest tłumaczona lub wartość jest kontraktem backendu.
+- Nie lokalizuj `name`, identyfikatorów, parametrów URL, wartości protokołowych ani kodów domenowych.
+- Przekazuj wartości serwerowe jako argumenty `msg(...)` tylko wtedy, gdy są renderowane bezpiecznie w ich kontekście. Nie używaj komunikatu jako pretekstu do zaufanego renderowania HTML-a.
+
 ## Obsługuj adresy URL i zasoby
 
 - Używaj adresów akcji i nawigacji dostarczanych przez Keycloak.

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateToggle = (isVisible) => {
       password.type = isVisible ? "text" : "password";
       icon.src = isVisible ? icon.dataset.visibleSrc : icon.dataset.hiddenSrc;
-      toggle.setAttribute("aria-label", isVisible ? "Ukryj hasło" : "Pokaż hasło");
+      toggle.setAttribute("aria-label", isVisible ? document.body.dataset.hidePasswordLabel : document.body.dataset.showPasswordLabel);
     };
 
     toggle.addEventListener("click", () => updateToggle(password.type !== "text"));
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const messages = document.body.dataset;
   const getFieldContainer = (field) =>
     field.closest(".flience-field") || field.closest(".flience-consent")?.parentElement || field.parentElement;
 
@@ -41,10 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const getMessage = (field) => {
-    if (field.validity.valueMissing) return "Uzupełnij to pole.";
-    if (field.validity.typeMismatch && field.type === "email") return "Podaj poprawny adres e-mail.";
-    if (field.validity.tooShort) return `Wpisz co najmniej ${field.minLength} znaków.`;
-    return field.validationMessage || "Sprawdź poprawność tego pola.";
+    if (field.validity.valueMissing) return messages.validationRequired;
+    if (field.validity.typeMismatch && field.type === "email") return messages.validationEmail;
+    if (field.validity.tooShort) return messages.validationTooShort.replace("{0}", field.minLength);
+    return field.validationMessage || messages.validationGeneric;
   };
 
   const isValidPolishNip = (value) => {
@@ -62,11 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (field.name === "password-confirm") {
       const password = field.form?.querySelector('input[name="password"], input[name="password-new"]');
-      field.setCustomValidity(password instanceof HTMLInputElement && field.value && password.value !== field.value ? "Hasła muszą być identyczne." : "");
+      field.setCustomValidity(password instanceof HTMLInputElement && field.value && password.value !== field.value ? messages.validationPasswordMismatch : "");
     }
 
     if (field.name === "organizationTaxId") {
-      field.setCustomValidity(field.value && !isValidPolishNip(field.value) ? "Podaj poprawny numer NIP." : "");
+      field.setCustomValidity(field.value && !isValidPolishNip(field.value) ? messages.validationNip : "");
     }
 
     if (field.checkValidity()) {

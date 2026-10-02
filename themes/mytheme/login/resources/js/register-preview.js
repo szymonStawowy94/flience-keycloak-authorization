@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     organizationSection.hidden = !isOrganization;
     organizationSection.querySelectorAll("input, select, textarea").forEach((field) => { field.disabled = !isOrganization; });
   }
-  const copy = isOrganization ? { context: "Zakładasz konto organizacji.", submit: "Utwórz organizację" } : { context: "Zakładasz konto prywatne.", submit: "Utwórz konto" };
+  const copy = isOrganization
+    ? { context: form.dataset.registrationOrganizationContext, submit: form.dataset.registrationOrganizationSubmit }
+    : { context: form.dataset.registrationPersonalContext, submit: form.dataset.registrationPersonalSubmit };
   document.querySelectorAll("[data-registration-context]").forEach((element) => { element.textContent = copy.context; });
   document.querySelectorAll("[data-registration-submit]").forEach((element) => { element.textContent = copy.submit; });
   if (email instanceof HTMLInputElement && username instanceof HTMLInputElement) {

@@ -1,0 +1,8 @@
+libraryBaseUrl: https://pleoai-69566.ondigitalocean.app
+projectSlug: szymonStawowy94/flience-keycloak-authorization
+
+paths:
+  skillsDir: skills
+
+publish:
+  defaultScope: PROJECT
