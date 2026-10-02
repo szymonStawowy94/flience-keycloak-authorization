@@ -123,7 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.noValidate = true;
     fields.forEach((field) => {
-      field.addEventListener("blur", () => {
+      field.addEventListener("blur", (event) => {
+        if (event.relatedTarget instanceof HTMLElement && event.relatedTarget.closest("a[href]")) return;
+
         field.dataset.validationTouched = "true";
         validateField(field);
       });
