@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const revealDelay = 180;
   const container = document.querySelector("[data-kiwi-animation]");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -11,10 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
     container,
     renderer: "svg",
     loop: true,
-    autoplay: true,
+    autoplay: false,
     path,
     rendererSettings: { preserveAspectRatio: "xMidYMid meet" },
   });
 
-  animation.addEventListener("DOMLoaded", () => container.setAttribute("data-lottie-ready", ""));
+  animation.addEventListener("DOMLoaded", () => {
+    window.setTimeout(() => {
+      animation.play();
+      container.setAttribute("data-lottie-ready", "");
+    }, revealDelay);
+  });
 });
