@@ -2,20 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("[data-registration-variant]");
   if (!(form instanceof HTMLFormElement)) return;
   const params = new URLSearchParams(window.location.search);
-  const isOrganization = params.get("registrationType") === "organization";
+  let isOrganization = params.get("registrationType") === "organization";
   const organizationSection = document.querySelector("[data-registration-organization]");
   const email = document.querySelector("[data-registration-email]");
   const username = document.querySelector("[data-registration-username]");
-  form.dataset.registrationVariant = isOrganization ? "organization" : "personal";
-  if (organizationSection instanceof HTMLElement) {
-    organizationSection.hidden = !isOrganization;
-    organizationSection.querySelectorAll("input, select, textarea").forEach((field) => { field.disabled = !isOrganization; });
-  }
-  const copy = isOrganization
-    ? { context: form.dataset.registrationOrganizationContext, submit: form.dataset.registrationOrganizationSubmit }
-    : { context: form.dataset.registrationPersonalContext, submit: form.dataset.registrationPersonalSubmit };
-  document.querySelectorAll("[data-registration-context]").forEach((element) => { element.textContent = copy.context; });
-  document.querySelectorAll("[data-registration-submit]").forEach((element) => { element.textContent = copy.submit; });
+  const applyRegistrationVariant = () => {
+    form.dataset.registrationVariant = isOrganization ? "organization" : "personal";
+    if (organizationSection instanceof HTMLElement) {
+      organizationSection.hidden = !isOrganization;
+      organizationSection.querySelectorAll("input, select, textarea").forEach((field) => { field.disabled = !isOrganization; });
+      organizationSection.querySelectorAll("[data-select-native]").forEach((select) => {
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+    }
+    const copy = isOrganization
+      ? { context: form.dataset.registrationOrganizationContext, submit: form.dataset.registrationOrganizationSubmit }
+      : { context: form.dataset.registrationPersonalContext, submit: form.dataset.registrationPersonalSubmit };
+    document.querySelectorAll("[data-registration-context]").forEach((element) => { element.textContent = copy.context; });
+    document.querySelectorAll("[data-registration-submit]").forEach((element) => { element.textContent = copy.submit; });
+  };
+
+  applyRegistrationVariant();
   if (email instanceof HTMLInputElement && username instanceof HTMLInputElement) {
     const syncUsername = () => { username.value = email.value; };
     syncUsername();
@@ -81,5 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.addEventListener("click", (event) => { if (!selectRoot.contains(event.target)) close(); });
   });
-  document.querySelectorAll("[data-registration-switch]").forEach((link) => { link.addEventListener("click", (event) => { event.preventDefault(); params.set("registrationType", isOrganization ? "personal" : "organization"); window.location.search = params.toString(); }); });
+  document.querySelectorAll("[data-registration-switch]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      isOrganization = !isOrganization;
+      params.set("registrationType", isOrganization ? "organization" : "personal");
+      const nextUrl = new URL(window.location.href);
+      nextUrl.search = params.toString();
+      window.history.replaceState(null, "", nextUrl);
+      applyRegistrationVariant();
+    });
+  });
 });

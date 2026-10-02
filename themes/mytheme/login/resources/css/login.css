@@ -7,9 +7,10 @@
 .flience-input:focus-visible { border-color: var(--color-accent-cta); box-shadow: none; }
 .flience-input[aria-invalid="true"] { border-color: var(--color-koral-300); }
 .flience-consent input[aria-invalid="true"] { border-color: var(--color-koral-300); }
-.flience-password-control { position: relative; align-self: start; }
+.flience-password-control { position: relative; display: grid; align-self: start; }
 .flience-password-control .flience-input { padding-inline-end: 60px; }
-.flience-password-toggle { position: absolute; inset-block: 0; inset-inline-end: 16px; display: grid; inline-size: 32px; place-items: center; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.flience-password-control > .flience-field-error { margin-block-start: 6px; }
+.flience-password-toggle { position: absolute; inset-block-start: 0; inset-inline-end: 16px; display: grid; inline-size: 32px; block-size: 48px; place-items: center; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .flience-password-toggle img { inline-size: 18px; block-size: 18px; }
 .flience-password-toggle:focus-visible { outline: 3px solid var(--color-border-focus); outline-offset: 2px; border-radius: 50%; }
 .flience-forgot-password, .flience-sign-up a { color: var(--color-accent-link); font-weight: var(--typo-body-sm-weight); text-decoration: none; }

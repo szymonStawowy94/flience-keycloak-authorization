@@ -39,7 +39,7 @@
                 </div>
                 <div class="flience-form-row flience-form-row--organization-identifiers">
                     <div class="flience-field">
-                        <label for="organization-tax-id">NIP <span>${msg("optional")}</span></label>
+                        <label for="organization-tax-id">NIP</label>
                         <input id="organization-tax-id" class="flience-input" name="organizationTaxId" type="text" inputmode="numeric" placeholder="000-000-00-00" disabled />
                     </div>
                     <div class="flience-field">

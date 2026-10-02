@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const getFieldContainer = (field) =>
     field.closest(".flience-field") || field.closest(".flience-consent")?.parentElement || field.parentElement;
 
+  const getClientErrorContainer = (field) =>
+    field.closest(".flience-password-control") || getFieldContainer(field);
+
   const getErrorId = (field) => `client-error-${field.id || field.name}`;
 
   const setDescribedBy = (field, errorId, shouldDescribe) => {
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const errorId = getErrorId(field);
-    const container = getFieldContainer(field);
+    const container = getClientErrorContainer(field);
     let error = document.getElementById(errorId);
 
     if (!error && container) {
