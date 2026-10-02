@@ -47,12 +47,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return field.validationMessage || "Sprawdź poprawność tego pola.";
   };
 
+  const isValidPolishNip = (value) => {
+    const nip = value.replace(/[\s-]/g, "");
+    if (!/^\d{10}$/.test(nip)) return false;
+
+    const weights = [6, 5, 7, 2, 3, 4, 5, 6, 7];
+    const checksum = weights.reduce((sum, weight, index) => sum + Number(nip[index]) * weight, 0) % 11;
+
+    return checksum !== 10 && checksum === Number(nip[9]);
+  };
+
   const validateField = (field) => {
     if (field.disabled || field.type === "hidden") return true;
 
     if (field.name === "password-confirm") {
       const password = field.form?.querySelector('input[name="password"], input[name="password-new"]');
       field.setCustomValidity(password instanceof HTMLInputElement && field.value && password.value !== field.value ? "Hasła muszą być identyczne." : "");
+    }
+
+    if (field.name === "organizationTaxId") {
+      field.setCustomValidity(field.value && !isValidPolishNip(field.value) ? "Podaj poprawny numer NIP." : "");
     }
 
     if (field.checkValidity()) {
