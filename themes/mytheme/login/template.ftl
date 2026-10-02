@@ -66,13 +66,20 @@
                 <div id="kc-header" class="${properties.kcHeaderClass!} flience-auth-intro">
                     <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
                     <#if realm.internationalizationEnabled && locale.supported?size gt 1>
-                        <div class="${properties.kcLocaleMainClass!}" id="kc-locale">
+                        <details class="${properties.kcLocaleMainClass!} flience-locale-selector" id="kc-locale">
+                            <summary id="kc-current-locale-link" aria-label="${msg('languageSelector')}">
+                                <span class="flience-locale-selector-value">${lang?upper_case}</span>
+                                <img class="flience-locale-selector-chevron" src="${url.resourcesPath}/img/icon_ui_arrow_down.svg" alt="" />
+                            </summary>
                             <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
-                                <div id="kc-locale-dropdown" class="${properties.kcLocaleDropDownClass!}">
-                                    <#list locale.supported as l><a href="${l.url}">${l.label}</a></#list>
+                                <div id="kc-locale-dropdown" class="${properties.kcLocaleDropDownClass!} flience-locale-selector-options">
+                                    <#list locale.supported as l>
+                                        <#assign localeCode = l.url?keep_after("kc_locale=")?keep_before("&")?upper_case>
+                                        <a href="${l.url}" title="${l.label}"<#if l.label == locale.current> aria-current="true"</#if>>${localeCode}</a>
+                                    </#list>
                                 </div>
                             </div>
-                        </div>
+                        </details>
                     </#if>
                     <h1 id="kc-page-title"><#nested "header"></h1>
                     <div class="flience-auth-subtitle"><#nested "subtitle"></div>
