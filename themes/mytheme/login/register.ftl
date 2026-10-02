@@ -37,9 +37,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="flience-field">
-                    <label for="organization-tax-id">NIP <span>${msg("optional")}</span></label>
-                    <input id="organization-tax-id" class="flience-input" name="organizationTaxId" type="text" inputmode="numeric" placeholder="000-000-00-00" disabled />
+                <div class="flience-form-row flience-form-row--organization-identifiers">
+                    <div class="flience-field">
+                        <label for="organization-tax-id">NIP <span>${msg("optional")}</span></label>
+                        <input id="organization-tax-id" class="flience-input" name="organizationTaxId" type="text" inputmode="numeric" placeholder="000-000-00-00" disabled />
+                    </div>
+                    <div class="flience-field">
+                        <label for="organization-regon">${msg("regon")}</label>
+                        <input id="organization-regon" class="flience-input" name="organizationRegon" type="text" inputmode="numeric" placeholder="${msg('regonPlaceholder')}" disabled />
+                    </div>
                 </div>
                 <p class="flience-organization-hint">${msg("organizationAdministratorHint")}</p>
             </section>

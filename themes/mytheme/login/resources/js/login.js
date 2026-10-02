@@ -58,6 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return checksum !== 10 && checksum === Number(nip[9]);
   };
 
+  const isValidPolishRegon = (value) => {
+    const regon = value.replace(/[\s-]/g, "");
+    if (!/^\d{9}(\d{5})?$/.test(regon)) return false;
+
+    const hasValidChecksum = (digits, weights) => {
+      const checksum = weights.reduce((sum, weight, index) => sum + Number(digits[index]) * weight, 0) % 11;
+      return (checksum === 10 ? 0 : checksum) === Number(digits[weights.length]);
+    };
+
+    return hasValidChecksum(regon, [8, 9, 2, 3, 4, 5, 6, 7])
+      && (regon.length === 9 || hasValidChecksum(regon, [2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8]));
+  };
+
   const validateField = (field) => {
     if (field.disabled || field.type === "hidden") return true;
 
@@ -68,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (field.name === "organizationTaxId") {
       field.setCustomValidity(field.value && !isValidPolishNip(field.value) ? messages.validationNip : "");
+    }
+
+    if (field.name === "organizationRegon") {
+      field.setCustomValidity(field.value && !isValidPolishRegon(field.value) ? messages.validationRegon : "");
     }
 
     if (field.checkValidity()) {

@@ -43,7 +43,7 @@
         </#list>
     </#if>
 </head>
-<body class="flience-auth-page ${properties.kcBodyClass!} ${bodyClass}" data-page-id="login-${pageId}" data-show-password-label="${msg('showPassword')}" data-hide-password-label="${msg('hidePassword')}" data-validation-required="${msg('validationRequired')}" data-validation-email="${msg('validationEmail')}" data-validation-too-short="${msg('validationTooShort')}" data-validation-generic="${msg('validationGeneric')}" data-validation-password-mismatch="${msg('validationPasswordMismatch')}" data-validation-nip="${msg('validationNip')}">
+<body class="flience-auth-page ${properties.kcBodyClass!} ${bodyClass}" data-page-id="login-${pageId}" data-show-password-label="${msg('showPassword')}" data-hide-password-label="${msg('hidePassword')}" data-validation-required="${msg('validationRequired')}" data-validation-email="${msg('validationEmail')}" data-validation-too-short="${msg('validationTooShort')}" data-validation-generic="${msg('validationGeneric')}" data-validation-password-mismatch="${msg('validationPasswordMismatch')}" data-validation-nip="${msg('validationNip')}" data-validation-regon="${msg('validationRegon')}">
     <div class="flience-auth-shell">
         <aside class="flience-auth-sky" aria-hidden="true">
             <img class="flience-auth-logo" src="${url.resourcesPath}/img/branding_logo-flience.svg" alt="" />
